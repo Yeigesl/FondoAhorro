@@ -6,7 +6,20 @@
 <meta charset="ISO-8859-1">
 <title>Liquidación</title>
 
+<script language="javascript">
 
+
+
+function cargaAviso(){
+	alert('Contennido no disponible.Espreralo Proximamente')
+}
+
+
+
+function cargaAvisos(){
+	alert('Espreralo Proximamente')
+}
+</script>
 <style type="text/css">
 .style7 {
 	font-size: 14px;
@@ -16,8 +29,8 @@
 .modal-contenido{
  width: 300px;
   background-color:white;
-  width:565px;
-  height:160px;
+  width:600px;
+  height:200px;
   padding-left:  50px;
   padding-top: 100px;
   margin-left:   80px;
@@ -54,27 +67,23 @@
 <a align="center" href="#miModal">Recibos de  Liquidación del Fondo de Ahorro IDEAAA, S.C </a>
 <div align="top" id="miModal" class="modal">
   <div align="top" class="modal-contenido">
-  <pre><a class="style7" align="right" href="#"> Recibos de Liquidación del Fondo de Ahorro IDEAAA,S.C            X</a></pre>
-     <p class="style9">Criterios de Búsqueda</p>
-     <table cellspacing="0" border=1 bordercolor="black" width=540px height=80px>
+  
+    <form name="frmAAADAM method="post" action="fondoAAADAM.jsp" action="Fondoahorro.java">
+    <pre><a class="style7" align="right" href="#"> Recibos de Liquidación del Fondo de Ahorro IDEAAA,S.C            X</a></pre>
+    <p class="style9">Criterios de Búsqueda</p>
+    <table cellspacing="0" border=1 bordercolor="black" width=580px height=120px>
     <tr>
-
     <td style=" border: inset 0pt">Ejercicio</td>
 
     <td style=" border: inset 0pt">No.Empleado</td>
 
     <td style=" border: inset 0pt">F.Rendimiento</td>
     
-    <td style=" border: inset 0pt"><input src="webI/impresora.png" height="550" width="580" type="button"  value="Imprimir"/></td>
-    
-   
-
-  </tr>
-
-  <tr>
-
+    <td  align="middle" style=" border: inset 0pt"><button id="uno" name="bI" align="middle" type="submit" onclick="carga()"><img align="middle" width="20" height="25" src="webI/impresora.png"/><br>Imprimir</br></button></td>
+    <td  align="middle" style=" border: inset 0pt"><button name="bV" align="middle" type="button" onclick="cargaAvisos()" ><img align="middle" width="20" height="25" src="webI/vale.png"/><br>Vales</br></button></td>
+    </tr>
+    <tr>
     <td style=" border: inset 0pt">
-   
     <select name="años" >
     <option value="1">2018-2019</option>
     <option value="2">2019-2020</option>
@@ -89,70 +98,62 @@
     <option value="11">2028-2029</option>
     <option value="12">2029-2030</option>
     </select></td>
-    
     </td>
-
     <td style=" border: inset 0pt"><input></td>
-
     <td style=" border: inset 0pt"><input></td>
-
-  </tr>
+    </tr>
     </table>
+    </form>
+    
+    
   </div>  
 </div>
 
 
 <br>
 
-<a align="center"  href="#miModal2">Recibos de Liquidación del Fondo de Ahorro AAADAM,A.C </a>
-<div align="top" id="miModal2" class="modal">
+<a align="center" href="#miModal">Recibos de  Liquidación del Fondo de Ahorro AAADAM, S.C </a>
+<div align="top" id="miModal" class="modal">
   <div align="top" class="modal-contenido">
+  
+    <form name="frmAAADAM" method="post" action="fondoAAADAM.jsp" action="Fondoahorro.java">
     <pre><a class="style7" align="right" href="#"> Recibos de Liquidación del Fondo de Ahorro AAADAM,S.C            X</a></pre>
-    <p  class="style9"> Criterios de Búsqueda</p>
-    <table border=1 bordercolor="black" width=540px height=80px>
-     <tr>
-
+    <p class="style9">Criterios de Búsqueda</p>
+    <table cellspacing="0" border=1 bordercolor="black" width=580px height=120px>
+    <tr>
     <td style=" border: inset 0pt">Ejercicio</td>
 
     <td style=" border: inset 0pt">No.Empleado</td>
 
     <td style=" border: inset 0pt">F.Rendimiento</td>
     
-    <td style=" border: inset 0pt"><input align="left" type="image" name="btBut"   value="Buscar" onclick="validaValores()"  /></td>
-    
-    <td style=" border: inset 0pt">Figura</td>
-
+    <td  align="middle" style=" border: inset 0pt"><button id="dos" name="bI2" align="middle" type="submit" onclic="carga()"><img align="middle" width="20" height="25" src="webI/impresora.png"/><br>Imprimir</br></button></td>
+    <td  align="middle" style=" border: inset 0pt"><button  name="bv2" align="middle" type="button"  width="25" height="30"onclick="cargaAviso()"><img align="middle" width="20" height="25" src="webI/vale.png"/><br>Vales</br></button></td>
     </tr>
 
     <tr>
-
     <td style=" border: inset 0pt">
     <select name="años" >
-    <option value="13">2018-2019</option>
-    <option value="14">2019-2020</option>
-    <option value="15">2020-2021</option>
-    <option value="16">2021-2022</option>
-    <option value="17">2022-2023</option>
-    <option value="18">2023-2024</option>
-    <option value="19">2024-2025</option>
-    <option value="20">2025-2026</option>
-    <option value="21">2026-2027</option>
-    <option value="22">2027-2028</option>
-    <option value="23">2028-2029</option>
-    <option value="24">2029-2030</option>
-   
+    <option value="12">2018-2019</option>
+    <option value="13">2019-2020</option>
+    <option value="14">2020-2021</option>
+    <option value="15">2021-2022</option>
+    <option value="16">2022-2023</option>
+    <option value="17">2023-2024</option>
+    <option value="18">2024-2025</option>
+    <option value="19">2025-2026</option>
+    <option value="20">2026-2027</option>
+    <option value="21">2027-2028</option>
+    <option value="22">2028-2029</option>
+    <option value="23">2029-2030</option>
     </select></td>
-    
-
+    </td>
     <td style=" border: inset 0pt"><input></td>
-
     <td style=" border: inset 0pt"><input></td>
-
-  </tr>
+    </tr>
     </table>
   </div>  
 </div>
-</br>
-
+</form>
 </body>
 </html>

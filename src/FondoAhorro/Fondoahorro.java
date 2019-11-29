@@ -10,8 +10,8 @@ import java.sql.Statement;
 public class Fondoahorro
 {
 	static String controlador= "com.informix.jdbc.IfxDriver";
-    static String conection=  "jdbc:informix-sqli://196.11.30.28:48620/estacionamiento:"
-    		+ "INFORMIXSERVER=ol_ideaaa;user=tcontrol;password=gestion2009";
+    static String conection=  "jdbc:informix-sqli://196.11.30.21:48620/fondo_ahorro:"
+    		+ "INFORMIXSERVER=ol_web;user=tcontrol;password=gestion2009";
  
     public String formatea(String valor){
 
@@ -38,38 +38,6 @@ public class Fondoahorro
         return resultado;
 
       }
- 
-    
-    /**
-     * Método que realiza una consulta en la base de datos Estacionamiento de 
-     * acuerdo con un rango especificado por el usuario.
-     * @param u entero que corresponde al valor inicial del rango recibido de la página web, 
-     * valor ingresado por usuario.
-     * @param v entero que corresponde al valor final del rango recibido de la página web, 
-     * valor ingresado por usuario.
-     * @return regresa arreglo bidimensional de tipo String que corresponde a la consulta 
-     * con parámetros.
-     */
- 
-    public static  String [][] getValores(int u, int v)
-    {
-   
-    	String[][] fila = null;
-    			
-    	     String a=Integer.toString(u);
-    	     String b=Integer.toString(v);
-			 fila=conexion("SELECT no_tarjeta, nombre,descripcion from tcontrol.maestro m \r\n" + 
-			 		"JOIN tcontrol.tipo_vehiculo v \r\n" + 
-			 		"ON m.id_tipo=v.id_tipo\r\n" + 
-			 		"WHERE m.no_tarjeta BETWEEN " +a+ "AND " +b);
-		
-			 
-		return fila;
-		
-    }
-    
-    
-    
     /**
      * Método que realiza la consulta de todos los números de tarjetones, 
      * el usuario no ingresa valores.

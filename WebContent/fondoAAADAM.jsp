@@ -22,17 +22,16 @@
 }
 .style topmargin{
 margin: red 5px solid;
-
 }
 </style>
 </head>
 <body topmargin="13" bottommargin="13"  leftmargin="15" rightmargin="15" >
 <form name="frmAAADAM" method="post" action=" ">
  <table align="left" width="100%" height="200%" cellpadding="0" cellspacing="0"   border="1" bordercolor="#000000">
-   <td> <br><br> <div align="center"><img align="top" src="webI/ideaaa.png" width="391" height="101"></br> </br></div>
+   <td> <br><br> <div align="center"><img align="top" src="webI/AAADAMNew400.png" width="391" height="101"></br> </br></div>
    <br>
    <pre><p align="right" class="style7 ">ANEXO:4.4.1  </p></pre>
-   <p align="center" class="style7 ">FONDO DE AHORRO DE LOS EMPLEADOS DE IDEAAA, S.C.</p>
+   <p align="center" class="style7 ">FONDO DE AHORRO DE LOS EMPLEADOS DE AAADAM, S.C.</p>
    <p align="center" class="style7">RECIBO DE LIQUIDACIÓN DE FONDO DE AHORRO</p>
    <p align="center" class="style7">DEL EJERCICIO 2016-2017</p>
    </br>

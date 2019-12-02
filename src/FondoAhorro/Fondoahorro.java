@@ -1,10 +1,26 @@
 package FondoAhorro;
-
+  
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
+
+
+import org.apache.catalina.util.StringParser;
+
+/**
+ * 
+ * @author Yareli Elizabeth Isabel Gómez
+ * @version septiembre-octubre 2019
+ * La clase tarjetones permite mostar valores de la base de datos Estacionamiento
+ * de acuerdo con los valores ingresdos por usuario en la página web.
+ * Especificamos el controlador a usar para la base en Informix
+ * Asi como los parámetros para la conexión correspondientes al nombre de servidor,
+ * nombre de usuario  y contraseña requerida.
+ */
+
 
 @SuppressWarnings("serial")
 public class Fondoahorro
@@ -38,42 +54,23 @@ public class Fondoahorro
         return resultado;
 
       }
-    /**
-     * Método que realiza la consulta de todos los números de tarjetones, 
-     * el usuario no ingresa valores.
-     * @return Regresa en un arreglo bidimensional de tipo String la consulta sin especificar 
-     * restricciones.
-     */
-    public static  String [][] getTodos()
-    {
-   
-    	String[][] fila = null;
-    			
-    	     
-			 fila=conexion("SELECT no_tarjeta, nombre,descripcion from tcontrol.maestro m \r\n" + 
-			 		"JOIN tcontrol.tipo_vehiculo v \r\n" + 
-			 		"ON m.id_tipo=v.id_tipo\r\n"); 
 
-		return fila;
-    }
-    
     /**
      * Método que ejecuta una consulta  y regresa los datos de acuerdo a la coicidencia 
      * entre el valor ingresado por el usuario y el regsitrado en la base de datos Estacionamiento
      * @param tarjeton
      * @return
      */
-    public static  String [][] getUno(int tarjeton)
+    public static  String [][] getEmpleado(int u)
     {
    
     	String[][] fila = null;
-    			
-    	     int m=0;
-			 fila=conexion("SELECT no_tarjeta, nombre,descripcion from tcontrol.maestro m \r\n" + 
-			 		"JOIN tcontrol.tipo_vehiculo v \r\n" + 
-			 		"ON m.id_tipo=v.id_tipo\r\n" +
-			 		"WHERE m.no_tarjeta="+tarjeton);
-
+    	String a=Integer.toString(u);
+	    String periodo="2010-2011";
+		fila=conexion("SELECT no_empleado,nombre,total,ahorro,rendimiento,aportacion_empresa,aportacion_empleado,ejercicio,empresa"
+		 		+ " from tcontrol.recibos m \r\n" + 
+		 		"WHERE m.no_empleado="+a
+		 		+ "AND m.ejercicio='"+periodo+"'");
 		return fila;
     }
 

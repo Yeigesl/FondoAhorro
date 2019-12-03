@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import = "java.text.DecimalFormat"%>
       <jsp:useBean id="ejecuta" scope="request" class="FondoAhorro.Fondoahorro">
 </jsp:useBean>
    
@@ -7,7 +8,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Fondo de Ahorro IDEAAA</title>
+<title>Fondo de Ahorro IDEAAA y AAADAM</title>
 
 <style type="text/css">
 <!--
@@ -38,12 +39,14 @@ margin: red 5px solid;
    <td> <br><br> <div align="center"><img align="top" src="webI/ideaaa.png" width="391" height="101"></br> </br></div>
    <br>
    <pre><p align="right" class="style7 ">ANEXO:4.4.1  </p></pre>
-   <p align="center" class="style7 "><span>FONDO DE AHORRO DE LOS EMPLEADOS DE <%out.print(resultado[0][3]); %></span></p>
+  
+   <p align="center" class="style7 ">FONDO DE AHORRO DE LOS EMPLEADOS DE <%out.print(resultado[0][8]);%> </p>
    <p align="center" class="style7">RECIBO DE LIQUIDACIÓN DE FONDO DE AHORRO</p>
    <p align="center" class="style7">DEL EJERCICIO </p>
    </br>
    <br>
-   <pre><p align="right" class="style9">  BUENO POR: <a align="right" class="style8" style='text-decoration: underline'><%out.print(resultado[0][2]);%></a></p></pre>
+   <%DecimalFormat format = new DecimalFormat ("$ # 0.00"); %>
+   <pre><p align="right" class="style9">  BUENO POR: <a align="right" class="style8" style='text-decoration: underline'>$<%out.println(format.format(resultado[0][3]));%><a>     </a></a></p></pre>
    <pre><p align="left" class="style9">  NOMBRE:</p></pre>
    <pre><p align="left" class="style9">  <a align="right" style='text-decoration: underline'><%out.print(resultado[0][1]); %>                                                                                                                                                                                                                                    </a></p></pre>                                                                                                                                        
    <pre><p align="left" class="style9">  No.Empleado:</p></pre>

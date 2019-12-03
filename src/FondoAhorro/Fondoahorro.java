@@ -1,19 +1,21 @@
 package FondoAhorro;
   
+import java.math.RoundingMode;
 import java.sql.Connection;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
-
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 import org.apache.catalina.util.StringParser;
 
 /**
  * 
  * @author Yareli Elizabeth Isabel Gómez
- * @version septiembre-octubre 2019
+ * @version noviembre-diciembre 2019
  * La clase tarjetones permite mostar valores de la base de datos Estacionamiento
  * de acuerdo con los valores ingresdos por usuario en la página web.
  * Especificamos el controlador a usar para la base en Informix
@@ -66,14 +68,17 @@ public class Fondoahorro
    
     	String[][] fila = null;
     	String a=Integer.toString(u);
-	    String periodo="2008-2009";
+	    String periodo="2018-2019";
 		fila=conexion("SELECT no_empleado,nombre,total,ahorro,rendimiento,aportacion_empresa,aportacion_empleado,ejercicio,empresa"
 		 		+ " from tcontrol.recibos m \r\n" + 
 		 		"WHERE m.no_empleado="+a
 		 		+ "AND m.ejercicio='"+periodo+"'");
+		System.out.print(fila);
 		return fila;
     }
 
+  
+       
     /**
      * Método que recorre el conjunto de datos albergado en la base de datos
      * rs permite verificar hacer el recorrido mientras el campo next no sea igual 

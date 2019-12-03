@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <jsp:useBean id="ejecuta" scope="request" class="FondoAhorro.Fondoahorro">
+</jsp:useBean>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,11 +29,14 @@ margin: red 5px solid;
 </head>
 <body topmargin="13" bottommargin="13"  leftmargin="15" rightmargin="15" >
 <form name="frmAAADAM" method="post" action=" ">
+<% int e=Integer.parseInt(request.getParameter("numero"));%>
+    <%String[][] res=ejecuta.getEmpleado(e);%>
+<%if(res.length!=0){ %>
  <table align="left" width="100%" height="200%" cellpadding="0" cellspacing="0"   border="1" bordercolor="#000000">
    <td> <br><br> <div align="center"><img align="top" src="webI/AAADAMNew400.png" width="391" height="101"></br> </br></div>
    <br>
    <pre><p align="right" class="style7 ">ANEXO:4.4.1  </p></pre>
-   <p align="center" class="style7 ">FONDO DE AHORRO DE LOS EMPLEADOS DE AAADAM, S.C.</p>
+   <p align="center" class="style7 ">FONDO DE AHORRO DE LOS EMPLEADOS DE <%out.prtint(res[0][8]); %>, S.C.</p>
    <p align="center" class="style7">RECIBO DE LIQUIDACIÓN DE FONDO DE AHORRO</p>
    <p align="center" class="style7">DEL EJERCICIO 2016-2017</p>
    </br>
@@ -83,6 +88,13 @@ margin: red 5px solid;
    </td>
    <br>
 </table>
+<%}else{%>
+	|	<td width="400"  bgcolor="#CCCCCC">
+		<div class="aviso" align="center">
+  			<strong>Aviso!</strong> El empleado con  número <%out.print(e);%> no existe, Gracias por su consulta.
+		</div>         
+     </td>	
+	<%} %>	
 </form>
 </body>
 </html>

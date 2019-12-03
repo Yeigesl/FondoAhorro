@@ -26,6 +26,7 @@ margin: red 5px solid;
 </style>
 </head>
 <body topmargin="13" bottommargin="13"  leftmargin="15" rightmargin="15" >
+<form name="frmIDEAAA" method="post" action=" ">
 <table align="left" width="100%" height="200%" cellpadding="0" cellspacing="0"   border="1" bordercolor="#000000">
    <br>
    <td> <br><br> <div align="center"><img align="top" src="webI/ideaaa.png" width="391" height="101"></br> </br></div>
@@ -83,5 +84,6 @@ margin: red 5px solid;
    </td>
    <br>
 </table>
+</form>
 </body>
 </html>

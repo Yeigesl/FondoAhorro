@@ -10,34 +10,30 @@
 function carga2(){
 	 document.frmAAADAM.submit();	
 }
-
 function carga(){
 	 document.frmIDEAAA.submit();	
 }
-
-
-
 function cargaAviso(){
 	alert('Contennido no disponible.Espreralo Proximamente')
 }
-
-
-
 function cargaAvisos(){
 	alert('Espreralo Proximamente')
 }
 </script>
+
+
 <style type="text/css">
+.style9 {font-size: 12px}
+
 .style7 {
 	font-size: 14px;
-	font-weight: bold;
+	font-weight:bold;
 }
-.style9 {font-size: 12px}
 .modal-contenido{
  width: 300px;
   background-color:white;
   width:600px;
-  height:200px;
+  height:250px;
   padding-left:  50px;
   padding-top: 100px;
   margin-left:   80px;
@@ -71,27 +67,21 @@ function cargaAvisos(){
 
 </head>
 <body>
-
-<form name="frmIDEAAA method="post" action="fondoIDEAAA.jsp" action="Fondoahorro.java">
-<a align="center" href="#miModal">Recibos de  Liquidación del Fondo de Ahorro IDEAAA, S.C </a>
+<form name="frmIDEAAA" method="post" action="fondoIDEAAA.jsp" action="Fondoahorro.java">
+<a class="style7" align="center" href="#miModal">Recibos de  Liquidación del Fondo de Ahorro IDEAAA, S.C </a>
 <div align="top" id="miModal" class="modal">
-<div align="top" class="modal-contenido"> 
-    <pre><a class="style7" align="right" href="#"> Recibos de Liquidación del Fondo de Ahorro IDEAAA,S.C            X</a></pre>
+  <div align="top" class="modal-contenido">
+   <pre> <p align="left" class="style7">Recibos  de Liquidación del Fondo de Ahorro IDEAAA,S.C            <a align="right" href="#">X</a></p></pre>
     <p class="style9">Criterios de Búsqueda</p>
     <table cellspacing="0" border=1 bordercolor="black" width=580px height=120px>
-    
     <tr>
     <td style=" border: inset 0pt">Ejercicio</td>
-
     <td style=" border: inset 0pt">No.Empleado</td>
-
     <td style=" border: inset 0pt">F.Rendimiento</td>
     
     <td  align="middle" style=" border: inset 0pt"><button  id="uno" name="bI" align="middle" type="submit" onclick="carga()" ><img align="middle" width="20" height="25" src="webI/impresora.png"/><br>Imprimir</br></button></td>
     <td  align="middle" style=" border: inset 0pt"><button name="bV" align="middle" type="button" onclick="cargaAvisos()" ><img align="middle" width="20" height="25" src="webI/vale.png"/><br>Vales</br></button></td>
     </tr>
-
-
     <tr>
     <td style=" border: inset 0pt">
     <select name="años" >
@@ -112,32 +102,30 @@ function cargaAvisos(){
     <td style=" border: inset 0pt"><input id="num" onblur="document.frmIDEAAA.txtPassConfirm.value = document.frmIDEAAAtxtPassConfirm.value.toUpperCase();"></td>
     <td style=" border: inset 0pt"><input id="ren" onblur="document.frmIDEAAA.txtPassConfirm.value = document.frmIDEAAAtxtPassConfirm.value.toUpperCase();"></td>
     </tr>
-    </table> 
+    </table>
   </div>  
 </div>
 </form>
 
 
 
-<form name="frmAAADAM" method="post" action="fondoAAADAM.jsp" action="Fondoahorro.java">
+
 <br>
-<a align="center" href="#miModal">Recibos de  Liquidación del Fondo de Ahorro AAADAM, S.C </a>
-<div align="top" id="miModal" class="modal">
-  <div align="top" class="modal-contenido">  
-    <pre><a class="style7" align="right" href="#"> Recibos de Liquidación del Fondo de Ahorro AAADAM,S.C            X</a></pre>
+<form name="frmAAADAM" method="post" action="fondoAAADAM.jsp" action="Fondoahorro.java">
+<a  class="style7"align="center"  href="#miModal2">Recibos de Liquidación del Fondo de Ahorro AAADAM,A.C </a>
+<div align="top" id="miModal2" class="modal">
+  <div align="top" class="modal-contenido">
+   <pre> <p align="left"  class="style7">Recibos de Liquidación del Fondo de Ahorro AAADAM,A.C             <a align="right" href="#">X</a> </p></pre>
     <p class="style9">Criterios de Búsqueda</p>
     <table cellspacing="0" border=1 bordercolor="black" width=580px height=120px>
     <tr>
-    <td style=" border: inset 0pt">Ejercicio</td>
-
+		 <td style=" border: inset 0pt">Ejercicio</td>
     <td style=" border: inset 0pt">No.Empleado</td>
-
     <td style=" border: inset 0pt">F.Rendimiento</td>
     
     <td  align="middle" style=" border: inset 0pt"><button id="dos" name="bI2" align="middle" type="submit" onclick="carga2()"><img align="middle" width="20" height="25" src="webI/impresora.png"/><br>Imprimir</br></button></td>
     <td  align="middle" style=" border: inset 0pt"><button  name="bv2" align="middle" type="button"  width="25" height="30"onclick="cargaAviso()"><img align="middle" width="20" height="25" src="webI/vale.png"/><br>Vales</br></button></td>
     </tr>
-
     <tr>
     <td style=" border: inset 0pt">
     <select name="años" >
@@ -157,11 +145,13 @@ function cargaAvisos(){
     </td>
     <td style=" border: inset 0pt"><input id="numero" onblur="document.frmAAADAM.txtPassConfirm.value = document.frmAAADAM.txtPassConfirm.value.toUpperCase();"></td>
     <td style=" border: inset 0pt"><input></td>
+
+
     </tr>
     </table>
   </div>  
 </div>
-</br>
 </form>
+</br>
 </body>
 </html>

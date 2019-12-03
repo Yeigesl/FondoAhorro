@@ -7,6 +7,17 @@
 <title>Liquidación</title>
 
 <script language="javascript">
+
+//valida que sean numeros
+function numeros(){
+	if (event.keyCode > 47 || event.keyCode <58) 		
+		event.returnValue = true;
+	else{
+		event.returnValue = false;
+	    
+	}
+}     
+
 function carga2(){
 	 document.frmAAADAM.submit();	
 }
@@ -85,7 +96,7 @@ function cargaAvisos(){
     <tr>
     <td style=" border: inset 0pt">
     <select name="años" >
-    <option id="op1" value="1">2018-2019</option>
+    <option id="op1" value="1" >2018-2019</option>
     <option id="op2" value="2">2019-2020</option>
     <option id="op3" value="3">2020-2021</option>
     <option id="op4" value="4" >2021-2022</option>
@@ -99,7 +110,7 @@ function cargaAvisos(){
     <option id="op12" value="12">2029-2030</option>
     </select></td>
     </td>
-    <td style=" border: inset 0pt"><input id="num" onblur="document.frmIDEAAA.txtPassConfirm.value = document.frmIDEAAAtxtPassConfirm.value.toUpperCase();"></td>
+    <td style=" border: inset 0pt"><input name="num" type="text" id="num" onkeypress="numeros()" size="15" maxlength="10" onblur="document.frmIDEAAA.txtUsuario.value = document.frmIDEAAA.txtUsuario.value.toUpperCase();document.frmIDEAAA.txtUsuario.value = document.frmIDEAAA.txtUsuario.value.trim();" /></td>
     <td style=" border: inset 0pt"><input id="ren" onblur="document.frmIDEAAA.txtPassConfirm.value = document.frmIDEAAAtxtPassConfirm.value.toUpperCase();"></td>
     </tr>
     </table>

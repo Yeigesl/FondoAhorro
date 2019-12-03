@@ -66,7 +66,7 @@ public class Fondoahorro
    
     	String[][] fila = null;
     	String a=Integer.toString(u);
-	    String periodo="2010-2011";
+	    String periodo="2008-2009";
 		fila=conexion("SELECT no_empleado,nombre,total,ahorro,rendimiento,aportacion_empresa,aportacion_empleado,ejercicio,empresa"
 		 		+ " from tcontrol.recibos m \r\n" + 
 		 		"WHERE m.no_empleado="+a

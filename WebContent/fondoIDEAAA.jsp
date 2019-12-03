@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+      <jsp:useBean id="ejecuta" scope="request" class="FondoAhorro.Fondoahorro">
+</jsp:useBean>
+   
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,21 +30,24 @@ margin: red 5px solid;
 </head>
 <body topmargin="13" bottommargin="13"  leftmargin="15" rightmargin="15" >
 <form name="frmIDEAAA" method="post" action=" ">
+<% int e=Integer.parseInt(request.getParameter("num"));%>
+    <%String[][] resultado=ejecuta.getEmpleado(e);%>
+<%if(resultado.length!=0){ %>
 <table align="left" width="100%" height="200%" cellpadding="0" cellspacing="0"   border="1" bordercolor="#000000">
    <br>
    <td> <br><br> <div align="center"><img align="top" src="webI/ideaaa.png" width="391" height="101"></br> </br></div>
    <br>
    <pre><p align="right" class="style7 ">ANEXO:4.4.1  </p></pre>
-   <p align="center" class="style7 ">FONDO DE AHORRO DE LOS EMPLEADOS DE IDEAAA, S.C.</p>
+   <p align="center" class="style7 "><span>FONDO DE AHORRO DE LOS EMPLEADOS DE <%out.print(resultado[0][3]); %></span></p>
    <p align="center" class="style7">RECIBO DE LIQUIDACIÓN DE FONDO DE AHORRO</p>
-   <p align="center" class="style7">DEL EJERCICIO 2016-2017</p>
+   <p align="center" class="style7">DEL EJERCICIO </p>
    </br>
    <br>
-   <pre><p align="right" class="style10">  BUENO POR: <a align="right" class="style8" style='text-decoration: underline'>$11,539.92</a><a>  </a></p></pre>
+   <pre><p align="right" class="style9">  BUENO POR: <a align="right" class="style8" style='text-decoration: underline'><%out.print(resultado[0][2]);%></a></p></pre>
    <pre><p align="left" class="style9">  NOMBRE:</p></pre>
-   <pre><p align="left" class="style9">  <a align="right" style='text-decoration: underline'>ROJAS VELEZ DIAZ                                                                                                                                                                                                                                    </a></p></pre>                                                                                                                                        
+   <pre><p align="left" class="style9">  <a align="right" style='text-decoration: underline'><%out.print(resultado[0][1]); %>                                                                                                                                                                                                                                    </a></p></pre>                                                                                                                                        
    <pre><p align="left" class="style9">  No.Empleado:</p></pre>
-   <pre><p align="left" class="style10">  <a align="right" class="style8" style='text-decoration: underline'>424   </a></p></pre>
+   <pre><p align="left" class="style10">  <a align="right" class="style8" style='text-decoration: underline'><%out.print(ejecuta.formatea(resultado[0][0]));%> </a></p></pre>
    <pre><p align="justify" class="style9">  Recibí de entera conformidad del Fondo de Ahorro de los empleados del AAADAM, A.C.,</p></pre>
    <pre><p align="justify" class="style9">  la cantidad de: <a align="right" class="style8" style='text-decoration: underline'>$11,539.92</a><a>  </a></p></pre>
    <pre><p align="center" class="style8">***** ONCE MIL QUINIENTOS TREINTA Y NUEVE PESOS 92/100 M.N</p></pre>
@@ -84,6 +90,14 @@ margin: red 5px solid;
    </td>
    <br>
 </table>
+
+<%}else{%>
+	|	<td width="400"  bgcolor="#CCCCCC">
+		<div class="aviso" align="center">
+  			<strong>Aviso!</strong> El empleado con  número <%out.print(e);%> no existe, Gracias por su consulta.
+		</div>         
+     </td>	
+	<%} %>	
 </form>
 </body>
 </html>

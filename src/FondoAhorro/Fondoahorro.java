@@ -10,10 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
+
 
 
 @SuppressWarnings("serial")
@@ -22,6 +19,30 @@ public class Fondoahorro{
     static String conection=  "jdbc:informix-sqli://196.11.30.21:48620/fondo_ahorro:"
     		+ "INFORMIXSERVER=ol_web;user=tcontrol;password=gestion2009";
     	
+    
+    
+    public String concatena(String valor){
+
+        String resultado = null;
+        String cadena1="IDEAAA";
+        if (valor==cadena1){
+
+         resultado = valor +", S.C.,";
+
+        }
+        else {
+        	 resultado = valor+", A.C.,";
+        	 
+        	
+
+        }
+  
+        return resultado;
+
+      }
+
+    
+    
     
     
     public String formatea(String valor){
@@ -90,8 +111,9 @@ public class Fondoahorro{
    
     	String[][] fila = null;
     	String a=Integer.toString(num);
-	    String periodo="2008-2009";
-		fila=conexion("SELECT no_empleado,nombre,empresa,total,ejercicio,aportacion_empresa,aportacion_empleado,ahorro"
+	    String periodo="2018-2019";
+		fila=conexion("SELECT no_empleado,nombre,empresa,total,ejercicio,aportacion_empresa,"
+				+ "aportacion_empleado,ahorro,rendimiento"
 		 		+ " from tcontrol.recibos m \r\n" + 
 		 		"WHERE m.no_empleado="+a
 		 		+ "AND m.ejercicio='"+periodo+"'");

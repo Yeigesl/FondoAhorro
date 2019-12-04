@@ -95,23 +95,23 @@ function cargaAvisos(){
     </tr>
     <tr>
     <td style=" border: inset 0pt">
-    <select name="años" >
-    <option id="op1" value="1" >2018-2019</option>
-    <option id="op2" value="2">2019-2020</option>
-    <option id="op3" value="3">2020-2021</option>
-    <option id="op4" value="4" >2021-2022</option>
-    <option id="op5" value="5" >2022-2023</option>
-    <option id="op6" value="6" >2023-2024</option>
-    <option id="op7" value="7" >2024-2025</option>
-    <option id="op8" value="8" >2025-2026</option>
-    <option id="op9" value="9" >2026-2027</option>
-    <option id="op10" value="10">2027-2028</option>
-    <option id="op11" value="11" >2028-2029</option>
-    <option id="op12" value="12">2029-2030</option>
+    <select name="años" id="op">
+    <option >2018-2019</option>
+    <option >2019-2020</option>
+    <option>2020-2021</option>
+    <option >2021-2022</option>
+    <option >2022-2023</option>
+    <option >2023-2024</option>
+    <option >2024-2025</option>
+    <option  >2025-2026</option>
+    <option  >2026-2027</option>
+    <option >2027-2028</option>
+    <option  >2028-2029</option>
+    <option >2029-2030</option>
     </select></td>
     </td>
     <td style=" border: inset 0pt"><input name="num" type="text" id="num" onkeypress="numeros()" size="15" maxlength="10" onblur="document.frmIDEAAA.txtUsuario.value = document.frmIDEAAA.txtUsuario.value.toUpperCase();document.frmIDEAAA.txtUsuario.value = document.frmIDEAAA.txtUsuario.value.trim();" /></td>
-    <td style=" border: inset 0pt"><input id="ren" onblur="document.frmIDEAAA.txtPassConfirm.value = document.frmIDEAAAtxtPassConfirm.value.toUpperCase();"></td>
+    <td style=" border: inset 0pt"><input name="ren" id="ren" type="text"  onblur="document.frmUno.txtUsuario.value = document.frmUno.txtUsuario.value.toUpperCase();document.frmUno.txtUsuario.value = document.frmUno.txtUsuario.value.trim();"></td>
     </tr>
     </table>
   </div>  

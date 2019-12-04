@@ -1,49 +1,42 @@
 package FondoAhorro;
   
-import java.math.RoundingMode;
 import java.sql.Connection;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-
-import org.apache.catalina.util.StringParser;
-
-/**
- * 
- * @author Yareli Elizabeth Isabel Gómez
- * @version noviembre-diciembre 2019
- * La clase tarjetones permite mostar valores de la base de datos Estacionamiento
- * de acuerdo con los valores ingresdos por usuario en la página web.
- * Especificamos el controlador a usar para la base en Informix
- * Asi como los parámetros para la conexión correspondientes al nombre de servidor,
- * nombre de usuario  y contraseña requerida.
- */
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 
 
 @SuppressWarnings("serial")
-public class Fondoahorro
-{
+public class Fondoahorro{
 	static String controlador= "com.informix.jdbc.IfxDriver";
     static String conection=  "jdbc:informix-sqli://196.11.30.21:48620/fondo_ahorro:"
     		+ "INFORMIXSERVER=ol_web;user=tcontrol;password=gestion2009";
- 
+    	
+    
+    
     public String formatea(String valor){
 
         String resultado = null;
 
         if (valor.length() == 1){
 
-         resultado =("00").concat(valor);
+         resultado = "00" + valor;
 
         }
 
        if (valor.length() == 2){
 
-         resultado = ("0").concat( valor);
+         resultado = "0" + valor;
 
         }
 
@@ -57,38 +50,62 @@ public class Fondoahorro
 
       }
 
-    /**
-     * Método que ejecuta una consulta  y regresa los datos de acuerdo a la coicidencia 
-     * entre el valor ingresado por el usuario y el regsitrado en la base de datos Estacionamiento
-     * @param tarjeton
-     * @return
-     */
-    public static  String [][] getEmpleado(int u)
+    
+    
+    
+    public static  String [][] getValores(int u, int v)
     {
    
     	String[][] fila = null;
-    	String a=Integer.toString(u);
-	    String periodo="2018-2019";
-		fila=conexion("SELECT no_empleado,nombre,total,ahorro,rendimiento,aportacion_empresa,aportacion_empleado,ejercicio,empresa"
+    			
+    	     String a=Integer.toString(u);
+    	     String b=Integer.toString(v);
+			 fila=conexion("SELECT no_tarjeta, nombre,descripcion from tcontrol.maestro m \r\n" + 
+			 		"JOIN tcontrol.tipo_vehiculo v \r\n" + 
+			 		"ON m.id_tipo=v.id_tipo\r\n" + 
+			 		"WHERE m.no_tarjeta BETWEEN "+a+"AND "+b);
+			 
+
+		return fila;
+		
+    }
+    
+    
+    public static  String [][] getTodos()
+    {
+   
+    	String[][] fila = null;
+    			
+    	     
+			 fila=conexion("SELECT no_tarjeta, nombre,descripcion from tcontrol.maestro m \r\n" + 
+			 		"JOIN tcontrol.tipo_vehiculo v \r\n" + 
+			 		"ON m.id_tipo=v.id_tipo\r\n"); 
+
+		return fila;
+    }
+    
+    
+    public static  String [][] getEmpleado(int num)
+    {
+   
+    	String[][] fila = null;
+    	String a=Integer.toString(num);
+	    String periodo="2008-2009";
+		fila=conexion("SELECT no_empleado,nombre,empresa,total,ejercicio,aportacion_empresa,aportacion_empleado,ahorro"
 		 		+ " from tcontrol.recibos m \r\n" + 
 		 		"WHERE m.no_empleado="+a
 		 		+ "AND m.ejercicio='"+periodo+"'");
-		System.out.print(fila);
+		
 		return fila;
-    }
+    	     
+			 
 
-  
-       
-    /**
-     * Método que recorre el conjunto de datos albergado en la base de datos
-     * rs permite verificar hacer el recorrido mientras el campo next no sea igual 
-     * a null.Los datos se almcenan en el arreglo bidimensional de tipo String llamado 
-     * resultado el cual es valor de retorno.
-     * @param rs objeto de tipo ResultSet que almacen el numero de filas a recorrer
-     * @return arreglo bidimensional de tipo String llamdao resultado que contiene los
-     * datos de la base de datos.
-     */
-	public static String[][] ResultSetToArray(ResultSet rs)
+	
+    }
+ 
+
+	public static 
+    String[][] ResultSetToArray(ResultSet rs)
     {
         String resultado[][]=null;
  
@@ -114,8 +131,9 @@ public class Fondoahorro
             {
  
                 resultado[j][i]=rs.getString(i+1);
-                resultado[i][0]=resultado[i][0];
-            
+              
+				
+			
             }
             j++;
  
@@ -129,15 +147,7 @@ public class Fondoahorro
       
         return resultado;
     }
-
-	/**
-	 * Método que permite cargar el driver para la conexión de la base de datos Estacionamiento 
-	 * en Informix. Crea el obtejo de tipo Connection, ResultSet y Statement que nos permite ejecutar
-	 * sentencias SQL. 
-	 * Los obejos mencionados son cerrados al finalizar su uso.
-	 * @param sql corresponde a la setencia SQL
-	 * @return Regresa el arreglo correspondiente a los valores almacenados en el ResultSet.
-	 */
+ 
     private static String[][] conexion(String sql)
     {
  
@@ -169,13 +179,8 @@ public class Fondoahorro
             return null;
     }
  
-  
- /**
-  * Método principal que manada a llamar al dibujado de la tabla para mostrar los
-  * datos consultados.
-  * @param args cualquier valor que pueda recibir.
-  */
     public static void main(String args[]) {
        
+      
     }
 }

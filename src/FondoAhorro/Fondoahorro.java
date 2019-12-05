@@ -24,16 +24,16 @@ public class Fondoahorro{
     public String concatena(String valor){
 
         String resultado = null;
+        String cadena2="AAADAM";
         String cadena1="IDEAAA";
-        if (valor==cadena1){
+        if (valor.equals(cadena1)){
 
          resultado = valor +", S.C.,";
 
         }
         else {
-        	 resultado = valor+", A.C.,";
         	 
-        	
+        	resultado = cadena2 +", A.C.,";
 
         }
   
@@ -160,6 +160,9 @@ public class Fondoahorro{
             return null;
     }
  
+    
+    
+    
     public static void main(String args[]) {
        
       

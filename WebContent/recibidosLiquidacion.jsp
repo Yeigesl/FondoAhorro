@@ -30,20 +30,6 @@ function cargaAviso(){
 function cargaAvisos(){
 	alert('Espreralo Proximamente')
 }
-
-
-
-function dimePropiedades(){ 
-   	var texto 
-   	texto = "El numero de opciones del select: " + document.frmIDEAAA.miSelect.length +"\n" 
-   	var indice = document.frmIDEAAA.miSelect.selectedIndex 
-   	texto += "nIndice de la opcion escogida: " + indice 
-   	var valor = document.frmIDEAAA.miSelect.options[indice].value 
-   	texto += "nValor de la opcion escogida: " + valor 
-   	var textoEscogido = document.frmIDEAAA.miSelect.options[indice].text 
-   	texto += "nTexto de la opcion escogida: " + textoEscogido 
-    alert(texto)
-}
 </script>
 
 
@@ -93,10 +79,10 @@ function dimePropiedades(){
 </head>
 <body>
 <form name="frmIDEAAA" method="post" action="fondoIDEAAA.jsp" action="Fondoahorro.java">
-<a class="style7" align="center" href="#miModal">Recibos de  Liquidación del Fondo de Ahorro IDEAAA, S.C </a>
+<a class="style7" align="center" href="#miModal">Recibos de  Liquidación del Fondo de Ahorro IDEAAA, S.C.    AAADAM, A.C.</a>
 <div align="top" id="miModal" class="modal">
   <div align="top" class="modal-contenido">
-   <pre> <p align="left" class="style7">Recibos  de Liquidación del Fondo de Ahorro IDEAAA,S.C            <a align="right" href="#">X</a></p></pre>
+   <pre> <p align="left" class="style7">Recibos  de Liquidación del Fondo de Ahorro IDEAAA,S.C. AAADAM, A.C.<a align="right" href="#">X</a></p></pre>
     <p class="style9">Criterios de Búsqueda</p>
     <table cellspacing="0" border=1 bordercolor="black" width=580px height=120px>
     <tr>

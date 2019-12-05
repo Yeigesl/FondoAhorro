@@ -38,15 +38,21 @@ margin: red 5px solid;
 <table align="left" width="100%" height="200%" cellpadding="0" cellspacing="0"   border="1" bordercolor="#000000">	
 <br>
 <td> 
-		   <br><br> <div align="center"><img align="top" src="webI/ideaaa.png" width="391" height="101"></br> </br></div>
-		   <br>
-		   <pre><p align="right" class="style7 ">ANEXO:4.4.1  </p></pre>
-	       <%String empresa=resultado[0][2]; %>
-		   <p align="center" class="style7 ">FONDO DE AHORRO DE LOS EMPLEADOS DE  <%out.print(ejecuta.concatena(empresa));%> </p>
-		   <p align="center" class="style7">RECIBO DE LIQUIDACIÓN DE FONDO DE AHORRO</p>
-		   <p align="center" class="style7">DEL EJERCICIO <%out.print(resultado[0][4]); %> </p>
-		   </br>
-		   <br>
+	   <%String empresa=resultado[0][2]; %>
+	   <%String empresaEqu="IDEAAA"; %>
+	   <%if(empresa.equals(empresaEqu)){ %>
+	   <br><br> <div align="center"><img align="top" src="webI/ideaaa.png" width="391" height="101"></br> </br></div>
+	   <%}else{%>
+	   <br><br> <div align="center"><img align="top" src="webI/AAADAMNew400.png" width="391" height="101"></br> </br></div>
+	   <%} %>
+	   <br>
+	   <pre><p align="right" class="style7 ">ANEXO:4.4.1  </p></pre>
+	   <p align="center" class="style7 ">FONDO DE AHORRO DE LOS EMPLEADOS DE  <%out.print(ejecuta.concatena(empresa));%> </p>
+	   <p align="center" class="style7">RECIBO DE LIQUIDACIÓN DE FONDO DE AHORRO</p>
+	   <p align="center" class="style7">DEL EJERCICIO <%out.print(resultado[0][4]); %> </p>
+	   </br>
+	   
+	   <br>
 	   <%String total=resultado[0][3]; %>
 	   <%if (total==null){ %>
 	   <%total="0.00"; %>
@@ -85,8 +91,8 @@ margin: red 5px solid;
 	   <%if (apoEmpleado==null){ %>
 	   <%rendimiento="0.00"; %>
 	   <%} %> 
-	   <pre><p align="justify" class="style9">  Rendimiento al <a align="right" class="style8"><%=request.getParameter("ren")%></a>                                                                                                                                                                                      <a align="right" class="style8" style='text-decoration: underline'>                $<%out.print(rendimiento);%></a><a>  </a>   </p></pre>
-	   <pre><p align="justify" class="style9">  Total recibido                                                                                                                                                                                                                 <a align="right" class="style8" style='text-decoration: underline'>           $<%out.print(total); %></a><a>  </a>   </p></pre>
+	   <pre><p align="justify" class="style9">  Rendimiento al <a align="right" class="style8"><%=request.getParameter("ren")%></a>                                                                                                                                                                                      <a align="right" class="style8" style='text-decoration: underline'>                  $<%out.print(rendimiento);%></a><a>  </a>   </p></pre>
+	   <pre><p align="justify" class="style9">  Total recibido                                                                                                                                                                                                                 <a align="right" class="style8" style='text-decoration: underline'>             $<%out.print(total); %></a><a>  </a>   </p></pre>
 	   <pre><p>  (-)</p></pre>
 	   <pre><p align="justify" class="style9">  Saldo de préstamo con interés                                                                                                                                                                                        <a align="right" class="style8" style='text-decoration: underline'>                   $0.00</a><a>  </a>   </p></pre>
 	   <br>

@@ -31,12 +31,11 @@ margin: red 5px solid;
 </head>
 <body topmargin="13" bottommargin="13"  leftmargin="15" rightmargin="15" >
 <form name="frmIDEAAA" method="post" action=" ">
+<% String op1=(request.getParameter("miSelect"));%>
 <% int e=Integer.parseInt(request.getParameter("num"));%>
-    <%String[][] resultado=ejecuta.getEmpleado(e);%>
+<%String[][] resultado=ejecuta.getEmpleado(e,op1);%>
 <%if(resultado.length!=0){ %>
-<table align="left" width="100%" height="200%" cellpadding="0" cellspacing="0"   border="1" bordercolor="#000000">
-	
-	
+<table align="left" width="100%" height="200%" cellpadding="0" cellspacing="0"   border="1" bordercolor="#000000">	
 <br>
 <td> 
 		   <br><br> <div align="center"><img align="top" src="webI/ideaaa.png" width="391" height="101"></br> </br></div>
@@ -92,7 +91,7 @@ margin: red 5px solid;
 	   <pre><p align="justify" class="style9">  Saldo de préstamo con interés                                                                                                                                                                                        <a align="right" class="style8" style='text-decoration: underline'>                   $0.00</a><a>  </a>   </p></pre>
 	   <br>
 	   <br>                                                                                                                                                                                                                                          
-	   <pre><p align="justify" class="style9">  Neto a recibir                                                                                                                                                                                                                <a align="right" class="style8" style='text-decoration: underline'>           $<%out.print(total); %></a><a>  </a>   </p></pre>
+	   <pre><p align="justify" class="style9">  Neto a recibir                                                                                                                                                                                                                  <a align="right" class="style8" style='text-decoration: underline'>          $<%out.print(total); %></a><a>  </a>   </p></pre>
 	   </br>
 	   </br>
 	   <br>                                                                                                                                                                                                                                     

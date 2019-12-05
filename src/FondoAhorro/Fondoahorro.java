@@ -11,7 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-
+import java.util.regex.Pattern;
 
 @SuppressWarnings("serial")
 public class Fondoahorro{
@@ -41,10 +41,6 @@ public class Fondoahorro{
 
       }
 
-    
-    
-    
-    
     public String formatea(String valor){
 
         String resultado = null;
@@ -74,55 +70,18 @@ public class Fondoahorro{
     
     
     
-    public static  String [][] getValores(int u, int v)
-    {
-   
-    	String[][] fila = null;
-    			
-    	     String a=Integer.toString(u);
-    	     String b=Integer.toString(v);
-			 fila=conexion("SELECT no_tarjeta, nombre,descripcion from tcontrol.maestro m \r\n" + 
-			 		"JOIN tcontrol.tipo_vehiculo v \r\n" + 
-			 		"ON m.id_tipo=v.id_tipo\r\n" + 
-			 		"WHERE m.no_tarjeta BETWEEN "+a+"AND "+b);
-			 
-
-		return fila;
-		
-    }
-    
-    
-    public static  String [][] getTodos()
-    {
-   
-    	String[][] fila = null;
-    			
-    	     
-			 fila=conexion("SELECT no_tarjeta, nombre,descripcion from tcontrol.maestro m \r\n" + 
-			 		"JOIN tcontrol.tipo_vehiculo v \r\n" + 
-			 		"ON m.id_tipo=v.id_tipo\r\n"); 
-
-		return fila;
-    }
-    
-    
-    public static  String [][] getEmpleado(int num)
+    public static  String [][] getEmpleado(int num,String cadena)
     {
    
     	String[][] fila = null;
     	String a=Integer.toString(num);
-	    String periodo="2018-2019";
 		fila=conexion("SELECT no_empleado,nombre,empresa,total,ejercicio,aportacion_empresa,"
 				+ "aportacion_empleado,ahorro,rendimiento"
 		 		+ " from tcontrol.recibos m \r\n" + 
 		 		"WHERE m.no_empleado="+a
-		 		+ "AND m.ejercicio='"+periodo+"'");
+		 		+ "AND m.ejercicio='"+cadena+"'");
 		
 		return fila;
-    	     
-			 
-
-	
     }
  
 

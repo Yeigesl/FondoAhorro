@@ -25,10 +25,24 @@ function carga(){
 	 document.frmIDEAAA.submit();	
 }
 function cargaAviso(){
-	alert('Contennido no disponible.Espreralo Proximamente')
+	alert('Contenido no disponible.Esperalo Proximamente')
 }
 function cargaAvisos(){
 	alert('Espreralo Proximamente')
+}
+
+
+
+function dimePropiedades(){ 
+   	var texto 
+   	texto = "El numero de opciones del select: " + document.frmIDEAAA.miSelect.length +"\n" 
+   	var indice = document.frmIDEAAA.miSelect.selectedIndex 
+   	texto += "nIndice de la opcion escogida: " + indice 
+   	var valor = document.frmIDEAAA.miSelect.options[indice].value 
+   	texto += "nValor de la opcion escogida: " + valor 
+   	var textoEscogido = document.frmIDEAAA.miSelect.options[indice].text 
+   	texto += "nTexto de la opcion escogida: " + textoEscogido 
+    alert(texto)
 }
 </script>
 
@@ -91,78 +105,31 @@ function cargaAvisos(){
     <td style=" border: inset 0pt">F.Rendimiento</td>
     
     <td  align="middle" style=" border: inset 0pt"><button  id="uno" name="bI" align="middle" type="submit" onclick="carga()" ><img align="middle" width="20" height="25" src="webI/impresora.png"/><br>Imprimir</br></button></td>
-    <td  align="middle" style=" border: inset 0pt"><button name="bV" align="middle" type="button" onclick="cargaAvisos()" ><img align="middle" width="20" height="25" src="webI/vale.png"/><br>Vales</br></button></td>
+    <td  align="middle" style=" border: inset 0pt"><button name="bV" align="middle" type="button" onclick="cargaAvisos()"><img align="middle" width="20" height="25" src="webI/vale.png"/><br>Vales</br></button></td>
     </tr>
     <tr>
     <td style=" border: inset 0pt">
-    <select name="años" id="op">
-    <option >2018-2019</option>
-    <option >2019-2020</option>
+    <select name="miSelect" id="miSelect"   onblur="document.frmIDEAAA.miSelect.options[indice].text() ">
+    <option>2018-2019</option>
+    <option>2019-2020</option>
     <option>2020-2021</option>
-    <option >2021-2022</option>
-    <option >2022-2023</option>
-    <option >2023-2024</option>
-    <option >2024-2025</option>
-    <option  >2025-2026</option>
-    <option  >2026-2027</option>
-    <option >2027-2028</option>
-    <option  >2028-2029</option>
-    <option >2029-2030</option>
+    <option>2021-2022</option>
+    <option>2022-2023</option>
+    <option>2023-2024</option>
+    <option>2024-2025</option>
+    <option>2025-2026</option>
+    <option>2026-2027</option>
+    <option>2027-2028</option>
+    <option>2028-2029</option>
+    <option>2029-2030</option>
     </select></td>
     </td>
     <td style=" border: inset 0pt"><input name="num" type="text" id="num" onkeypress="numeros()" size="15" maxlength="10" onblur="document.frmIDEAAA.txtUsuario.value = document.frmIDEAAA.txtUsuario.value.toUpperCase();document.frmIDEAAA.txtUsuario.value = document.frmIDEAAA.txtUsuario.value.trim();" /></td>
-    <td style=" border: inset 0pt"><input name="ren" id="ren" type="text"  onblur="document.frmUno.txtUsuario.value = document.frmUno.txtUsuario.value.toUpperCase();document.frmUno.txtUsuario.value = document.frmUno.txtUsuario.value.trim();"></td>
+    <td style=" border: inset 0pt"><input name="ren" id="ren" type="text"  onblur="document.frmIDEAAA.txtUsuario.value = document.frmIDEAAA.txtUsuario.value.toUpperCase();document.frmIDEAAA.txtUsuario.value = document.frmIDEAAA.txtUsuario.value.trim();"></td>
     </tr>
     </table>
   </div>  
 </div>
 </form>
-
-
-
-
-<br>
-<form name="frmAAADAM" method="post" action="fondoAAADAM.jsp" action="Fondoahorro.java">
-<a  class="style7"align="center"  href="#miModal2">Recibos de Liquidación del Fondo de Ahorro AAADAM,A.C </a>
-<div align="top" id="miModal2" class="modal">
-  <div align="top" class="modal-contenido">
-   <pre> <p align="left"  class="style7">Recibos de Liquidación del Fondo de Ahorro AAADAM,A.C             <a align="right" href="#">X</a> </p></pre>
-    <p class="style9">Criterios de Búsqueda</p>
-    <table cellspacing="0" border=1 bordercolor="black" width=580px height=120px>
-    <tr>
-		 <td style=" border: inset 0pt">Ejercicio</td>
-    <td style=" border: inset 0pt">No.Empleado</td>
-    <td style=" border: inset 0pt">F.Rendimiento</td>
-    
-    <td  align="middle" style=" border: inset 0pt"><button id="dos" name="bI2" align="middle" type="submit" onclick="carga2()"><img align="middle" width="20" height="25" src="webI/impresora.png"/><br>Imprimir</br></button></td>
-    <td  align="middle" style=" border: inset 0pt"><button  name="bv2" align="middle" type="button"  width="25" height="30"onclick="cargaAviso()"><img align="middle" width="20" height="25" src="webI/vale.png"/><br>Vales</br></button></td>
-    </tr>
-    <tr>
-    <td style=" border: inset 0pt">
-    <select name="años" >
-    <option value="13">2018-2019</option>
-    <option value="14">2019-2020</option>
-    <option value="15">2020-2021</option>
-    <option value="16">2021-2022</option>
-    <option value="17">2022-2023</option>
-    <option value="18">2023-2024</option>
-    <option value="19">2024-2025</option>
-    <option value="20">2025-2026</option>
-    <option value="21">2026-2027</option>
-    <option value="22">2027-2028</option>
-    <option value="23">2028-2029</option>
-    <option value="24">2029-2030</option>
-    </select></td>
-    </td>
-    <td style=" border: inset 0pt"><input id="numero" onblur="document.frmAAADAM.txtPassConfirm.value = document.frmAAADAM.txtPassConfirm.value.toUpperCase();"></td>
-    <td style=" border: inset 0pt"><input></td>
-
-
-    </tr>
-    </table>
-  </div>  
-</div>
-</form>
-</br>
 </body>
 </html>

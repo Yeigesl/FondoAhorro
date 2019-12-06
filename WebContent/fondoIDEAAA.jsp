@@ -124,7 +124,7 @@ margin: red 5px solid;
 <%}else{%>
 	|	<td width="400"  bgcolor="#CCCCCC">
 		<div class="aviso" align="center">
-  			<strong>Aviso!</strong> El empleado con  número <%out.print(e);%> no existe, Gracias por su consulta.
+  			<strong>Aviso!</strong> El empleado con  número <%out.print(ejecuta.formatea(request.getParameter("num")));%> no existe, Gracias por su consulta.
 		</div>         
      </td>	
 	<%} %>	

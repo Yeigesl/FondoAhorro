@@ -3,6 +3,9 @@
 <%@ page import = "java.text.DecimalFormat"%>
       <jsp:useBean id="ejecuta" scope="request" class="FondoAhorro.Fondoahorro">
 </jsp:useBean>
+
+<jsp:useBean id="exe" scope="request" class="FondoAhorro.Numero_Letras">
+</jsp:useBean>
    
 <!DOCTYPE html>
 <html>
@@ -55,7 +58,7 @@ margin: red 5px solid;
 	   <br>
 	   <%String total=resultado[0][3]; %>
 	   <%if (total==null){ %>
-	   <%total="0.00"; %>
+	   		<%total="0.00"; %>
 	   <%} %>
 	   <pre><p align="right" class="style9">  BUENO POR: <a align="right" class="style8" style='text-decoration: underline'>$<%out.print(total); %><a>     </a></a></p></pre>
 	   <pre><p align="left" class="style9">  NOMBRE:</p></pre>
@@ -64,7 +67,7 @@ margin: red 5px solid;
 	   <pre><p align="left" class="style10">  <a align="right" class="style8" style='text-decoration: underline'><%out.print(ejecuta.formatea(resultado[0][0]));%> </a></p></pre>
 	   <pre><p align="justify" class="style9">  Recibí de entera conformidad del Fondo de Ahorro de los empleados de <%out.print(ejecuta.concatena(empresa));%> </p></pre>
 	   <pre><p align="justify" class="style9">  la cantidad de: <a align="right" class="style8" style='text-decoration: underline'>$<%out.print(total); %></a><a>  </a></p></pre>
-	   <pre><p align="center" class="style8">***** ONCE MIL QUINIENTOS TREINTA Y NUEVE PESOS 92/100 M.N</p></pre>
+	   <pre><p align="center" class="style8">******<%out.print(exe.Convertir(total,true)); %>*****</p></pre>
 	   <br>
 	   <pre><p align="justify" class="style9">  Importe del saldo de mi Fondo de Ahorro y Rendimineto, correspondiente al Ejercicio del 01 de diciembre de 2016 al</p></pre>
 	   <pre><p align="justify" class="style9">  30 de noviembre de 2017, con fecha de recibido del 01 de diciembre de 2017 y estoy de acuerdo en que si tuviera</p></pre>
@@ -75,7 +78,7 @@ margin: red 5px solid;
 	   <%if (apoEmpresa==null){ %>
 	   <%apoEmpresa="0.00"; %>
 	   <%} %>
-	   <pre><p align="justify" class="style9">  Aportación a la empresa													                                                                                              <a align="right" class="style8" style='text-decoration: underline'>           $<%out.print(apoEmpresa); %></a><a>  </a>   </p></pre>
+	   <pre><p align="left" class="style9">  Aportación a la empresa													                                                                                              <a align="right" class="style8" style='text-decoration: underline'>           $<%out.print(apoEmpresa); %></a><a>  </a>   </p></pre>
 	   <%String apoEmpleado=resultado[0][6]; %>
 	   <%if (apoEmpleado==null){ %>
 	   <%apoEmpleado="0.00"; %>

@@ -160,11 +160,7 @@ public class Fondoahorro{
             return null;
     }
  
-    public static String numLetra(String numeroLetra){
-    	String [] contenedor=numeroLetra.split(".");
-		String entero=contenedor[0];
-		return entero;
-    }
+   
     
     
     

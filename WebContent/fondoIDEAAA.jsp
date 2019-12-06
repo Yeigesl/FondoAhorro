@@ -35,6 +35,11 @@ margin: red 5px solid;
 <body topmargin="13" bottommargin="13"  leftmargin="15" rightmargin="15" >
 <form name="frmIDEAAA" method="post" action=" ">
 <% String op1=(request.getParameter("miSelect"));%>
+<% String string = (request.getParameter("miSelect"));%>
+<% String[] parts = string.split("-");%>
+<% String part1 = parts[0]; // 123%>
+<% String part2 = parts[1]; // 654321%>
+
 <% int e=Integer.parseInt(request.getParameter("num"));%>
 <%String[][] resultado=ejecuta.getEmpleado(e,op1);%>
 <%if(resultado.length!=0){ %>
@@ -69,11 +74,13 @@ margin: red 5px solid;
 	   <pre><p align="justify" class="style9">  la cantidad de: <a align="right" class="style8" style='text-decoration: underline'>$<%out.print(total); %></a><a>  </a></p></pre>
 	   <pre><p align="center" class="style8">******<%out.print(exe.Convertir(total,true)); %>*****</p></pre>
 	   <br>
-	   <pre><p align="justify" class="style9">  Importe del saldo de mi Fondo de Ahorro y Rendimineto, correspondiente al Ejercicio del 01 de diciembre de 2016 al</p></pre>
-	   <pre><p align="justify" class="style9">  30 de noviembre de 2017, con fecha de recibido del 01 de diciembre de 2017 y estoy de acuerdo en que si tuviera</p></pre>
+	   <pre><p align="justify" class="style9">  Importe del saldo de mi Fondo de Ahorro y Rendimineto, correspondiente al Ejercicio del 01 de diciembre de <%out.print(part1); %> al</p></pre>
+	   <pre><p align="justify" class="style9">  30 de noviembre de <%out.print(part2); %>, con fecha de recibido del 01 de diciembre de <%out.print(part2); %> y estoy de acuerdo en que si tuviera</p></pre>
 	   <pre><p align="justify" class="style9">  algún adeudo pendiente de pago se me descuente de este importe que se desglosa de la siguiente manera </p></pre>
 	   </br>
 	   <br>
+	   <table align="left" width="70%" height="50%" cellpadding="0" cellspacing="0"  ">
+       <tr>
 	   <%String apoEmpresa=resultado[0][5]; %>
 	   <%if (apoEmpresa==null){ %>
 	   <%apoEmpresa="0.00"; %>
@@ -103,6 +110,9 @@ margin: red 5px solid;
 	   <pre><p align="justify" class="style9">  Neto a recibir                                                                                                                                                                                                                  <a align="right" class="style8" style='text-decoration: underline'>          $<%out.print(total); %></a><a>  </a>   </p></pre>
 	   </br>
 	   </br>
+	   
+	   </tr>
+	   </table>
 	   <br>                                                                                                                                                                                                                                     
 	   <pre><p  align="justify" class="style9">  Hago constar que por medio del presente recibo, estoy integramente liquidando de mi Fondo de Ahorro y su Rendimiento</p></pre>
 	   <pre><p  align="justify" class="style9">  al <a align="right" class="style8"><%=request.getParameter("ren")%></a> y sin saldo de préstamo alguno que pagar. </p></pre>
@@ -127,7 +137,7 @@ margin: red 5px solid;
 <%}else{%>
 	|	<td width="400"  bgcolor="#CCCCCC">
 		<div class="aviso" align="center">
-  			<strong>Aviso!</strong> El empleado con  número <%out.print(ejecuta.formatea(request.getParameter("num")));%> no existe, Gracias por su consulta.
+  			<strong>Aviso!</strong> El empleado con  número <%out.print(ejecuta.formatea(request.getParameter("num")));%> no existe para los datos solicitados,verifique por favor.Gracias por su consulta.
 		</div>         
      </td>	
 	<%} %>	

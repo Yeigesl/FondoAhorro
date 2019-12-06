@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -160,6 +162,14 @@ public class Fondoahorro{
             return null;
     }
  
+    
+    public static String fecha(String fecha) {
+    	SimpleDateFormat formatter = new SimpleDateFormat("dd de MM yyyy");
+    	// Aqui usamos la instancia formatter para darle el formato a la fecha. Es importante ver que el resultado es un string.
+    	String fechaTexto = formatter.format(fecha);
+		return fecha;
+    	
+    }
    
     
     

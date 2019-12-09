@@ -20,28 +20,28 @@
 		font-family: Verdana, Arial, Helvetica, sans-serif;}
 .style10 {font-size: 12px font-weight: bold;}
 .style7 {
-	font-size: 16px;
-	font-weight: bold;
-}
-.style8 {
 	font-size: 14px;
 	font-weight: bold;
 }
+.style8 {
+	font-size: 12px;
+	font-weight: bold;
+}
 .style topmargin{
-margin: red 5px solid;
+margin: red 3px solid;
 }
 
 
 
  td {
-    cellspacing:0px;
-    height:6px;
+   
+    height:10px;
  }
 </style>
 
 
 </head>
-<body topmargin="4" bottommargin="8"  leftmargin="15" rightmargin="15" >
+<body topmargin="1" bottommargin="1"  leftmargin="15" rightmargin="15" >
 <form name="frmIDEAAA" method="post" action=" ">
 <% String op1=(request.getParameter("miSelect"));%>
 <% String string = (request.getParameter("miSelect"));%>
@@ -51,22 +51,21 @@ margin: red 5px solid;
 <% int e=Integer.parseInt(request.getParameter("num"));%>
 <%String[][] resultado=ejecuta.getEmpleado(e,op1);%>
 <%if(resultado.length!=0){ %>
-<table align="left" width="100%" height="100%" cellpadding="0" cellspacing="0"   border="1" bordercolor="#000000">	
-<br>
-<td> 
+<table align="left" width="101%" height="5%" cellpadding="0" cellspacing="0"   border="1" bordercolor="#000000">	
+
+<td cellspacing="0"> 
 	   <%String empresa=resultado[0][2]; %>
 	   <%String empresaEqu="IDEAAA"; %>
 	   <%if(empresa.equals(empresaEqu)){ %>
-	   <br> <div align="center"><img align="top" src="webI/ideaaa.png" width="391" height="91"></br></div>
+	   <div align="center"><img align="top" src="webI/ideaaa.png" width="271" height="91"></div>
 	   <%}else{%>
-	   <br> <div align="center"><img align="top" src="webI/AAADAMNew400.png" width="391" height="91"></br></div>
+	    <div align="center"><img align="top" src="webI/AAADAMNew400.png" width="271" height="91"></div>
 	   <%} %>
-	   <br>
 	   <pre><p align="right" class="style7 ">ANEXO:4.4.1  </p></pre>
 	   <p align="center" class="style7 ">FONDO DE AHORRO DE LOS EMPLEADOS DE  <%out.print(ejecuta.concatena(empresa));%> </p>
 	   <p align="center" class="style7">RECIBO DE LIQUIDACIÓN DE FONDO DE AHORRO</p>
 	   <p align="center" class="style7">DEL EJERCICIO <%out.print(resultado[0][4]); %> </p>
-	   </br>
+	
 	   <%String total=resultado[0][3]; %>
 	   <%if (total==null){ %>
 	   		<%total="0.00"; %>
@@ -79,17 +78,17 @@ margin: red 5px solid;
 	   <pre><p align="justify" class="style9">  Recibí de entera conformidad del Fondo de Ahorro de los empleados de <%out.print(ejecuta.concatena(empresa));%> </p></pre>
 	   <pre><p align="justify" class="style9">  la cantidad de: <a align="right" class="style8" style='text-decoration: underline'>$<%out.print(total); %></a><a>  </a></p></pre>
 	   <pre><p align="center" class="style8">******<%out.print(exe.Convertir(total,true)); %>*****</p></pre>
-	   <br>
+	 
 	   <pre><p align="justify" class="style9">  Importe del saldo de mi Fondo de Ahorro y Rendimineto, correspondiente al Ejercicio del 01 de diciembre de <%out.print(part1); %> al</p></pre>
 	   <pre><p align="justify" class="style9">  30 de noviembre de <%out.print(part2); %>, con fecha de recibido del 01 de diciembre de <%out.print(part2); %> y estoy de acuerdo en que si tuviera</p></pre>
 	   <pre><p align="justify" class="style9">  algún adeudo pendiente de pago se me descuente de este importe que se desglosa de la siguiente manera </p></pre>
-	   </br>
+	  
 	                                                                                                                                                         
 	   <%String rendimiento=resultado[0][8]; %>
 	   <%if (rendimiento==null){ %>
 	   <%rendimiento="0.00"; %>
 	   <%} %> 
-	   <table td align="left" width="98%" height="30%" cellpadding="0" cellspacing="0" border="1" >
+	   <table td align="left" width="80%" height="3%" cellpadding="0" cellspacing="0" >
 	   <tr >
 		   <%String apoEmpresa=resultado[0][5]; %>
 		   <%if (apoEmpresa==null){ %>
@@ -97,7 +96,7 @@ margin: red 5px solid;
 		   <%} %>
 		   <td ><pre class="style9">  Aportación de la empresa</pre></td>
 		
-		   <td align=right><pre><p align="right" class="style8" style='text-decoration: underline'>        $<%out.print(apoEmpresa); %></p><p>  </p></pre></td>
+		   <td align=right><pre><p align="right" class="style8" style='text-decoration: underline'>         $<%out.print(apoEmpresa); %></p><p>  </p></pre></td>
 	   </tr>
 	   <tr >
 		   <%String apoEmpleado=resultado[0][6]; %>
@@ -105,7 +104,7 @@ margin: red 5px solid;
 		   <%apoEmpleado="0.00"; %>
 		   <%} %>            
 		    <td  ><pre class="style9">  Aportacion del empleado</pre></td>
-			<td align=right><pre><p align="right" class="style8" style='text-decoration: underline'>        $<%out.print(apoEmpleado); %></p><p>  </p></pre></td>
+			<td align=right><pre><p align="right" class="style8" style='text-decoration: underline'>         $<%out.print(apoEmpleado); %></p><p>  </p></pre></td>
 	   </tr>
 	   <tr >	   
 		   <%String ahorro=resultado[0][7]; %>
@@ -113,7 +112,7 @@ margin: red 5px solid;
 		   <%ahorro="0.00"; %>
 		   <%} %>  
 		   <td height="1"><pre class="style9">  Importe Fondo de Ahorro=Aportacioón de la empresa+Aportación del empleado</pre></td>
-		   <td align=right><pre><p align="right" class="style8" style='text-decoration: underline'>        $<%out.print(ahorro); %></p><p>  </p></pre></td> 	
+		   <td align=right><pre><p align="right" class="style8" style='text-decoration: underline'>         $<%out.print(ahorro); %></p><p>  </p></pre></td> 	
 	  	   <tr>
 	   </tr>
 	
@@ -123,12 +122,12 @@ margin: red 5px solid;
 	   </tr> 
 	   <tr >
 	    	<td><pre class="style9">  Rendimiento al <a align="right" class="style8"><%=request.getParameter("ren")%></a></pre></td>
-			<td align=right><pre><p align="right" class="style8" style='text-decoration: underline'>          $<%out.print(rendimiento); %></p><p>  </p></pre></td>
+			<td align=right><pre><p align="right" class="style8" style='text-decoration: underline'>           $<%out.print(rendimiento); %></p><p>  </p></pre></td>
 	    	</td>
 	   </tr> 
 	   <tr  >          
 		    <td ><pre class="style9">  Total recibido</pre></td>
-			<td align=right><pre><p align="right" class="style8" style='text-decoration: underline'>        $<%out.print(total); %></p><p>  </p></pre></td>
+			<td align=right><pre><p align="right" class="style8" style='text-decoration: underline'>         $<%out.print(total); %></p><p>  </p></pre></td>
 	   	    
 	   </tr>
 	    <tr  >
@@ -137,11 +136,11 @@ margin: red 5px solid;
 	   </tr> 
 	   <tr  >          
 		    <td  ><pre class="style9">  Saldo de préstamo con interés</pre></td>
-			<td align=right><pre><p align="right" class="style8" style='text-decoration: underline'>            $<%out.print("0.00"); %></p><p>  </p></pre></td>
+			<td align=right><pre><p align="right" class="style8" style='text-decoration: underline'>             $<%out.print("0.00"); %></p><p>  </p></pre></td>
 	   </tr>
 	   <tr  >          
 		    <td height="1"><pre class="style9">  Neto a recibir</pre></td>
-			<td align=right><pre><p align="right" class="style8" style='text-decoration: underline'>        $<%out.print(total); %></p><p>  </p></pre></td>
+			<td align=right><pre><p align="right" class="style8" style='text-decoration: underline'>         $<%out.print(total); %></p><p>  </p></pre></td>
 	   </tr>
 	  
 	   <td><pre><p  align="justify" class="style9">  Hago constar que por medio del presente recibo, estoy integramente liquidando de mi Fondo de Ahorro y su Rendimiento</p></pre>
@@ -149,11 +148,8 @@ margin: red 5px solid;
 	   <pre><p  align="justify" class="style9">                                                               Firma de recibido del trabajador                                                              Fecha de recibido</p></pre>
 	   <pre><p>                              ________________________________                       __________________________</p></pre>
 	   </td></tr>
-	   
-	  
 	</table>   
 </td>
-<br>
 </table>
 <%}else{%>
 	|	<td width="400"  bgcolor="#CCCCCC">
